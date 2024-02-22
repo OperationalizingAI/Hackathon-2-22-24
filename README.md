@@ -11,9 +11,9 @@ The purpose of this preparation sheet is to help participants get a lab environm
 | Signup for a free OpenAI account    |
 | Create a Free MongoDB Atlas Account |
 | Run the first example |
-| Setup another Atlas Vecctor Database (Langchain Example) |
-| Setup Amazon Sagemaker ebviornment id using AWS|
-| Setup Google Colab enviornment id using GCP  
+| Setup another Atlas Vector Database (Langchain Example) |
+| Setup Amazon Sagemaker environment id using AWS|
+| Setup Google Colab environment id using GCP  
 | Optional Labs |
 | Setting S3 Buckets for large files (optional) |
 
@@ -77,7 +77,7 @@ In this example we are going to load a HuggingFace dataset provided by MongoDB.
 >> [https://huggingface.co/datasets/AIatMongoDB/embedded_movies](https://huggingface.co/datasets/AIatMongoDB/embedded_movies)
 
 
-#### Setup the Databse Collection 
+#### Setup the Database Collection 
 - select Database button on the left
 - select the Browse Collections tab
 - select create databases
@@ -153,7 +153,7 @@ If you need to reload a collection.
 - In the left window highlight the collection name
 - Select the trash can icon and delete
 
-### 4) Setup another Atlas Vecctor Database (Langchain Example)
+### 4) Setup another Atlas Vector Database (Langchain Example)
 
 This example is based on the following code:
 
@@ -202,7 +202,7 @@ From the AWS Console navigate the Amazon Sagemaker (note you can use the search 
 #### Setup a Notebook Instance
 - After the Atlas Vector Database (Cluster0) is created and set up, we'll set up a Notebook Instance:
 - select Notebook > Notebook Instances on the left side
-- Select the “Create notebook Instance” buttonin top right
+- Select the “Create notebook Instance” button on top right
 - In Notebook Instance Settings
 - Add a Notebook Instance name (e.g., MDB-test1)
 - Use the defaults for the other setting fields
@@ -250,7 +250,7 @@ Figure 4
 >> 
 >> MONGODB_ATLAS_CLUSTER_URI
 >
-> Alternatitvly you can setup your keys in the notebook "getpass" or some other tool.
+> Alternativly you can setup your keys in the notebook "getpass" or some other tool.
 
 #### Using Amazon Secrets Manager
 - Setup your secrets in Amazon Secrets Manager
