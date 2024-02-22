@@ -4,6 +4,9 @@
 
 The purpose of this preparation sheet is to help participants get a lab environment set up and running before the event. We have provided some sample Python code that we can use as a template for some of the projects we'll be running in the hackathon. In addition to Llama 2, Bedrock, and others, we will try to provide alternative stacks at the event. Currently, the default starter stack consists of GPT3.5-turbo, Langchain, and MongoDB Atlas Vector Search.
 
+## Code of Conduct
+[https://devopsdays.org/conduct/](https://devopsdays.org/conduct/)
+
 ## GenAI Hackathon Preparation Sheet Overview
 
 | Overview  |
