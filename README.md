@@ -339,6 +339,7 @@ Here's a list of the labs:
 - Lab3-2 - Adding multiple embeddings to a collection.
 - Lab3-3 - Compare performance of different embeddings.
 - Lab4-1 - Load Uber and Lyft 10k PDFs into Atlas Vector Search.
+- Lab4-2 - DAL-E-3 Image generator.
 
 
 ### 8) Setting S3 Buckets for large files (optional) 
