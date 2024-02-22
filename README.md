@@ -313,11 +313,11 @@ os.environ['LANGSMITH_API_KEY'] = langsmith_api_key
 - Run your code.
 
 ### 7) Optional Labs
-We created a number of lab exerciese based on the work of Sujee Maniyam. He did an amazong job researching and putting togeher a number of examples. However, they are all deisgned to run locally on your machhine. We have created a number of his labs in this repository under the directory "labs/" that work with Google Colab and Amazon's Sagemaker. You can find his orignal work here:
+We created a number of lab exerciese based on the work of Sujee Maniyam. He did an amazing job researching and putting together a number of examples. However, they are all designed to run locally on your machine. We have created a number of his labs in this repository under the directory "labs/" that work with Google Colab and Amazon's Sagemaker. You can find his orignal work here:
 
 [https://github.com/sujee/mongodb-atlas-vector-search](https://github.com/sujee/mongodb-atlas-vector-search)]
 
-There also some great examples in Prakul Argarwal's (from MongoDB) reposotory here:
+There also some great examples in Prakul Argarwal's (from MongoDB) repository here:
 
 [https://github.com/prakul/MongoDB-AI-Resources](https://github.com/prakul/MongoDB-AI-Resources)
 
@@ -328,11 +328,11 @@ Here's a list of the labs:
 - Lab2-1 - Simple OpenAI client connection test.
 - Lab2-2 - Run simple quries against the sample_mflux (Netflix Movies) dataset. Setup a vector search index to quest embeddings.
 - Lab2-3 - Run cosine similarity against chunked PDF files. 
-- Lab2-4 - Query embeddings from text-embedding-ada-002 to use to search Atlas vector database. the langchain_dbmust exists already.
+- Lab2-4 - Query embeddings from text-embedding-ada-002 to use to search Atlas vector database. The langchain_db must exist already.
 - Lab3-1 - Querying with different embedding models.
 - Lab3-2 - Adding multiple embeddings to a collection.
 - Lab3-3 - Compare performance of different embeddings.
-- Lab4-1 - Load Uber and Lyft 10k PDFs into Atlas Vectore Search.
+- Lab4-1 - Load Uber and Lyft 10k PDFs into Atlas Vector Search.
 
 
 ### 8) Setting S3 Buckets for large files (optional) 
@@ -361,7 +361,7 @@ Create Bucket
 }
 ```
 
-From the Notebook console opern the termial of the Instance…
+From the Notebook console open the termial of the Instance…
 ```
 	aws s3 cp s3://large-blobs/void.tar.gz ~/void.tar.gz
 ```
