@@ -1,4 +1,4 @@
-package main
+package test
 
 import (
 	"testing"
@@ -82,16 +82,16 @@ func TestComputeIntersectingCubes(t *testing.T) {
 	}} {
 
 		t.Log("TestComputeIntersectingCubes for target pos", testcase.targetPos)
-		intersectingCubes = c.ComputeIntersectingCubes(origin, testcase.targetPos)
+		intersectingCubes = ctx.ComputeIntersectingCubes(origin, testcase.targetPos)
 
 		for _, expectedCube := range testcase.expectedCubes {
-			if !arrayContainsVec3(intersectingCubes, expectedCube) {
+			if !arrayContainsVec2(intersectingCubes, expectedCube) {
 				t.Errorf("Intersecting cubes missing %v", expectedCube)
 			}
 		}
 
 		for _, intersectingCube := range intersectingCubes {
-			if !arrayContainsVec3(testcase.expectedCubes, intersectingCube) {
+			if !arrayContainsVec2(testcase.expectedCubes, intersectingCube) {
 				t.Errorf("Unexpected intersecting cube %v", intersectingCube)
 			}
 		}
