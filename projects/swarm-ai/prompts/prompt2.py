@@ -2,7 +2,7 @@ lang = 'golang'
 
 prompt = f"""
 
-You're a {lang} sofware developer. You will be given {error_log}. Inspect the errors, revise the written code to ensure the unit tests given in the triple backticks passed. 
+You're a {lang} sofware developer. You will write code to make the unit tests given in the triple backticks passed. 
 
 Perform the following actions:
 
