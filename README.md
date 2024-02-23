@@ -18,6 +18,7 @@ The purpose of this preparation sheet is to help participants get a lab environm
 | Setup Amazon Sagemaker environment id using AWS|
 | Setup Google Colab environment id using GCP  
 | Optional Labs |
+| Optional Evaualtions setup |
 | Setting S3 Buckets for large files (optional) |
 
 
@@ -341,8 +342,80 @@ Here's a list of the labs:
 - Lab4-1 - Load Uber and Lyft 10k PDFs into Atlas Vector Search.
 - Lab4-2 - DAL-E-3 Image generator.
 
+### 9) Setting Observability with Arize-Phoenix (optional) 
+Arize Phoenix is an opensource tool for evaluating, troubleshoot, and fine tune your LLMs.
 
-### 8) Setting S3 Buckets for large files (optional) 
+[https://github.com/Arize-ai/phoenix](https://github.com/Arize-ai/phoenix)
+
+The following is a code that will work with Langhcain.
+
+Install Arize-Phoenix
+```
+!pip install arize-phoenix
+```
+
+Import and setup the enviornment
+```
+from urllib.request import urlopen
+
+import nest_asyncio
+import numpy as np
+import pandas as pd
+import phoenix as px
+from langchain.chains import RetrievalQA
+from langchain.chat_models import ChatOpenAI
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.retrievers import KNNRetriever
+from phoenix.experimental.evals import (
+    HallucinationEvaluator,
+    OpenAIModel,
+    QAEvaluator,
+    RelevanceEvaluator,
+    run_evals,
+)
+from phoenix.session.evaluation import get_qa_with_reference, get_retrieved_documents
+from phoenix.trace import DocumentEvaluations, SpanEvaluations
+from phoenix.trace.langchain import LangChainInstrumentor
+from tqdm import tqdm
+
+nest_asyncio.apply()  # needed for concurrent evals in notebook environments
+```
+Before you run your quey
+```
+session = px.launch_app()
+LangChainInstrumentor().instrument(
+```
+If you want to run evaluations for hallucinations, correctness, and relevance
+```
+queries_df = get_qa_with_reference(px.Client())
+retrieved_documents_df = get_retrieved_documents(px.Client()
+
+eval_model = OpenAIModel(
+    model_name="gpt-4-turbo-preview",
+)
+hallucination_evaluator = HallucinationEvaluator(eval_model)
+qa_correctness_evaluator = QAEvaluator(eval_model)
+relevance_evaluator = RelevanceEvaluator(eval_model)
+
+hallucination_eval_df, qa_correctness_eval_df = run_evals(
+    dataframe=queries_df,
+    evaluators=[hallucination_evaluator, qa_correctness_evaluator],
+    provide_explanation=True,
+)
+relevance_eval_df = run_evals(
+    dataframe=retrieved_documents_df,
+    evaluators=[relevance_evaluator],
+    provide_explanation=True,
+)[0]
+
+px.Client().log_evaluations(
+    SpanEvaluations(eval_name="Hallucination", dataframe=hallucination_eval_df),
+    SpanEvaluations(eval_name="QA Correctness", dataframe=qa_correctness_eval_df),
+    DocumentEvaluations(eval_name="Relevance", dataframe=relevance_eval_df),
+)
+```
+
+### 9) Setting S3 Buckets for large files (optional) 
 
 - Additional Notes for Processing Large Files
 - Setup a shared S3 blob
