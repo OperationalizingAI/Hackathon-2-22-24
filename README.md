@@ -342,7 +342,7 @@ Here's a list of the labs:
 - Lab4-1 - Load Uber and Lyft 10k PDFs into Atlas Vector Search.
 - Lab4-2 - DAL-E-3 Image generator.
 
-### 9) Setting Observability with Arize-Phoenix (optional) 
+### 8) Setting Observability with Arize-Phoenix (optional) 
 Arize Phoenix is an opensource tool for evaluating, troubleshoot, and fine tune your LLMs.
 
 [https://github.com/Arize-ai/phoenix](https://github.com/Arize-ai/phoenix)
