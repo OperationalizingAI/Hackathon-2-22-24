@@ -4,14 +4,14 @@ import (
 	"testing"
 )
 
-func arrayContainsVec2(slice []Vec2, vec Vec2) bool {
-	for _, v := range slice {
-		if v.X == vec.X && v.Y == vec.Y {
-			return true
-		}
-	}
-	return false
-}
+// func ArrayContainsVec2(slice []Vec2, vec Vec2) bool {
+// 	for _, v := range slice {
+// 		if v.X == vec.X && v.Y == vec.Y {
+// 			return true
+// 		}
+// 	}
+// 	return false
+// }
 
 func TestComputeIntersectingCubes(t *testing.T) {
 	t.Log("TestComputeIntersectingCubes")
@@ -85,13 +85,13 @@ func TestComputeIntersectingCubes(t *testing.T) {
 		intersectingCubes = ctx.ComputeIntersectingCubes(origin, testcase.targetPos)
 
 		for _, expectedCube := range testcase.expectedCubes {
-			if !arrayContainsVec2(intersectingCubes, expectedCube) {
+			if !ArrayContainsVec2(intersectingCubes, expectedCube) {
 				t.Errorf("Intersecting cubes missing %v", expectedCube)
 			}
 		}
 
 		for _, intersectingCube := range intersectingCubes {
-			if !arrayContainsVec2(testcase.expectedCubes, intersectingCube) {
+			if !ArrayContainsVec2(testcase.expectedCubes, intersectingCube) {
 				t.Errorf("Unexpected intersecting cube %v", intersectingCube)
 			}
 		}
