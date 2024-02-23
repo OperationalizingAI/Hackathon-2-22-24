@@ -1,5 +1,13 @@
 # Swarm AI
 
+**Authors:**
+| Name | GitHub | LinkedIn |
+| ---- | ------ | -------- | 
+| Tyler McGoffin | jtmcg | [linkedin.com/in/jtmcg/](https://www.linkedin.com/in/jtmcg/) |
+| Kenneth Lo | klopmp | [linkedin.com/in/kennethlo/](https://www.linkedin.com/in/kennethlo/) |
+| Dr. Ahmad Reza | | [linkedin.com/in/ahmad-reza-cheraghi/](https://www.linkedin.com/in/ahmad-reza-cheraghi/)|
+| Vivian | | [linkedin.com/in/vivian-d-28268615](https://www.linkedin.com/in/vivian-d-28268615/) |
+
 ## Vision
 LLM's don't do logic - they simply pattern match. That makes them really bad at writing functional code. How can we make sure an LLM does output functional code? 
 
